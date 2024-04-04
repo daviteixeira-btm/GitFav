@@ -5,10 +5,10 @@
 }
 
 :root {
-    font-size: 62.5%;
-    --ff-primary: 'Popins', 'sans-serif';
-    --text-color: #303030;
     --hue: 194;
+    font-size: 62.5%;
+    --text-color: #303030;
+    --ff-primary: 'Popins', 'sans-serif';
     --primary-color: hsl(var(--hue), 100%, 63%);
 }
 
@@ -20,10 +20,6 @@ body {
 
 body * {
     font-family: var(--ff-primary);
-}
-
-button {
-    background-color: var(--primary-color);
 }
 
 .sr-only {
@@ -40,12 +36,111 @@ button {
 
 body #app {
     padding: 2rem;
-    max-width: 500px;
     margin: 0 auto;
+    max-width: 500px;
 }
 
 body #app header {
     display: flex;
+    margin: 2.5rem 0;
     align-items: center;
     justify-content: space-between;
+}
+
+body #app header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+body #app header .search {
+    display: flex;
+    align-items: center;
+}
+
+body #app header .search input {
+    height: 3.2rem;
+    padding: 0.8rem;
+    border: 1px solid #CCC;
+    border-radius: .4rem 0 0 ,4rem;
+}
+
+body #app header .search button {
+    border: none;
+    height: 3.2rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-radius: 0 .4rem .4rem 0;
+    background-color: var(--primary-color);
+}
+
+body #app header .search button:hover {
+    filter: brightness(1.1);
+}
+
+body #app table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+body #app table * {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+body #app table th {
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: normal;
+    background-color: var(--primary-color);
+}
+
+body #app table th:first-child {
+    border-top-left-radius: .4rem;
+}
+
+body #app table th:last-child {
+    border-top-right-radius: .4rem;
+}
+
+/* Pares */
+body #app table tr:nth-child(even){
+    background: #eee;
+}
+
+/* Impares */
+body #app table tr:nth-child(odd){
+    background: #ddd;
+}
+
+body #app table td {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+body #app table td.user {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+body #app table td.user img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+body #app table td.user a {
+    text-decoration: none;
+}
+
+body #app table td.user a p {
+    font-weight: bold;
+}
+
+body #app table td .remove {
+    border: none;
+    color: #ff0000;
+    background: none;
 }
