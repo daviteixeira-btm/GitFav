@@ -8,20 +8,25 @@ export class Favorites {
     }
 
     load(){
-        this.entries = [
-            {
-                login: "daviteixeira-btm",
-                name: "Davi Teixeira",
-                public_repos: "80",
-                followers: "101"
-            }
-        ];
+        this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || []
     };
+
+    /*[
+        {
+            login: "daviteixeira-btm",
+            name: "Davi Teixeira",
+            public_repos: "80",
+            followers: "101"
+        }
+    ];*/
 
     delete(user){
         // Higher-order functions (map, filter, find, reduce ...)
         const filteredEntries = this.entries
             .filter(entry => entry.login !== user.login);
+
+        this.entries = filteredEntries;
+        this.update();
     };
 };
 
