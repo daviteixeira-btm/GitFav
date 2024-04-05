@@ -19,25 +19,33 @@ export class Favorites {
     constructor(root){
         this.root = document.querySelector(root);
         this.load();
-        //GithubUser.search("daviteixeira-btm").then(user => console.log(user));
     };
 
     load(){
         this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || []
     };
 
-    async add(username){
-        const user = await GithubUser.search(username);
+    save(){
+        localStorage.setItem("@github-favorites:", JSON.stringify(this.entries));
     };
 
-    /*[
-        {
-            login: "daviteixeira-btm",
-            name: "Davi Teixeira",
-            public_repos: "80",
-            followers: "101"
-        }
-    ];*/
+    async add(username){
+        try {
+            const user = await GithubUser.search(username);
+            console.log(user);
+
+            if(user.login === undefined){
+                throw new Error("Usuário não encontrado!");
+            }
+
+            this.entries = [user, ...this.entries];
+            this.update();
+            this.save();
+
+        }catch(error){
+            alert(error.message);
+        };
+    };
 
     delete(user){
         // Higher-order functions (map, filter, find, reduce ...)
@@ -46,6 +54,7 @@ export class Favorites {
 
         this.entries = filteredEntries;
         this.update();
+        this.save();
     };
 };
 
