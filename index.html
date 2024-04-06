@@ -13,24 +13,28 @@
 <body>
     <div id="app">
         <header>
-            <h1>GitFav</h1>
+            <img src="./assets/Gitfav.svg" alt="Logo da GitFav"/>
             <div class="search">
-                <label class="sr-only" for="input-search">Usuário do GitHub</label>
-                <input id="input-search" type="text" placeholder="Usuário do GitHub" />
-                <button>&plus;</button>
+                <label class="sr-only" for="input-search">Digite o Github username que quer favoritar</label>
+                <input id="input-search" type="text" placeholder="Digite o Github username que quer favoritar" />
+                <button>
+                    <img src="./assets/startwo.svg" /> Favoritar
+                </button>
             </div>
         </header>
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuário</th>
-                    <th>Repositórios</th>
-                    <th>Seguidores</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Repositories</th>
+                        <th>Followers</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

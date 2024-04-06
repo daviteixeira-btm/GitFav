@@ -7,7 +7,7 @@
 :root {
     --hue: 194;
     font-size: 62.5%;
-    --text-color: #303030;
+    --text-color: #f2f2f2;
     --ff-primary: 'Popins', 'sans-serif';
     --primary-color: hsl(var(--hue), 100%, 63%);
 }
@@ -15,7 +15,7 @@
 body {
     font-size: 1.6rem;
     color: var(--text-color);
-    background-color: rgb(250, 254, 255);
+    background-color: #000;
 }
 
 body * {
@@ -37,13 +37,13 @@ body * {
 body #app {
     padding: 2rem;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 112rem;
 }
 
 body #app header {
     display: flex;
-    margin: 2.5rem 0;
     align-items: center;
+    margin: 2.5rem 0 8.7rem 0;
     justify-content: space-between;
 }
 
@@ -58,23 +58,38 @@ body #app header .search {
 }
 
 body #app header .search input {
+    border: none;
     height: 3.2rem;
+    width: 46.2rem;
     padding: 0.8rem;
-    border: 1px solid #CCC;
-    border-radius: .4rem 0 0 ,4rem;
+    color: #7c7c8a;
+    margin-right: 1rem;
+    border-radius: .4rem;
+    background: #06181C;
 }
 
 body #app header .search button {
+    gap: 1rem;
     border: none;
-    height: 3.2rem;
-    padding: 0 1rem;
+    display: flex;
     cursor: pointer;
-    border-radius: 0 .4rem .4rem 0;
-    background-color: var(--primary-color);
+    color: #f2f2f2;
+    font-weight: bold;
+    align-items: center;
+    border-radius: .4rem;
+    padding: 1.2rem 3.2rem;
+    justify-content: center;
+    background-color: #065E7C;
 }
 
 body #app header .search button:hover {
     filter: brightness(1.1);
+}
+
+body #app .table-container {
+    max-height: 38rem;
+    overflow-y: scroll;
+    border-radius: 1.2rem;
 }
 
 body #app table {
@@ -92,25 +107,25 @@ body #app table th {
     padding: 1.5rem;
     text-align: left;
     font-weight: normal;
-    background-color: var(--primary-color);
+    background-color: #092D38;
 }
 
 body #app table th:first-child {
-    border-top-left-radius: .4rem;
+    border-top-left-radius: 1.2rem;
 }
 
 body #app table th:last-child {
-    border-top-right-radius: .4rem;
+    border-top-right-radius: 1.2rem;
 }
 
 /* Pares */
 body #app table tr:nth-child(even){
-    background: #eee;
+    background: #4A808C;
 }
 
 /* Impares */
 body #app table tr:nth-child(odd){
-    background: #ddd;
+    background: rgba(6, 22, 27, 0.5);
 }
 
 body #app table td {
@@ -141,7 +156,8 @@ body #app table td.user a p {
 
 body #app table td .remove {
     border: none;
-    color: #ff0000;
     cursor: pointer;
+    color: #F75A68;
     background: none;
+    font-weight: bold;
 }
